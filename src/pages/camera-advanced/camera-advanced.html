@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Camera advanced</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-row align-items-center justify-content-center>
+        <p *ngIf="!browserSupportMedia"> Your browser does not support media api </p>
+        <video #camera autoplay (click)="screenshot()"></video>
+    </ion-row>
+    <ion-row align-items-center justify-content-center>
+        <button ion-button (click)="captureVideo()">Capture video</button>
+        <button ion-button (click)="screenshot()">Screenshot</button>
+        <button ion-button (click)="applyFilters()">Apply filter: {{ filters[filterIndex + 1] }}</button>
+    </ion-row>
+    <ion-row align-items-center justify-content-center>
+        <img #image src="">
+    </ion-row>
+    <canvas style="display:none;"></canvas>
+</ion-content>

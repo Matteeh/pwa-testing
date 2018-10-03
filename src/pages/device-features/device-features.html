@@ -1,0 +1,49 @@
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Device features</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-row align-items-center justify-content-center>
+        <ion-item>
+            <ion-label *ngIf="online" color="primary" text-center>Status: online</ion-label>
+            <ion-label *ngIf="!online" color="danger" text-center>Status: offline</ion-label>
+        </ion-item>
+    </ion-row>
+    <ion-row *ngIf="battery" align-items-center justify-content-center text-wrap>
+        <ion-item>
+            <ion-label color="primary" text-center>Intial battery level: {{ initialBatteryLvl }}</ion-label>
+            <ion-label color="primary" text-center>Current battery level: {{ currentBatteryLvl }}</ion-label>
+        </ion-item>
+    </ion-row>
+    <ion-row *ngIf="memory" align-items-center justify-content-center>
+        <ion-item>
+            <ion-label color="primary" text-center>Memory: {{ memory }}GB</ion-label>
+        </ion-item>
+    </ion-row>
+    <ion-row *ngIf="connectionInfo?.type" align-items-center justify-content-center text-wrap>
+        <ion-item>
+            <ion-label color="primary" text-center>Network Type: {{ connectionInfo.type }}</ion-label>
+        </ion-item>
+    </ion-row>
+    <ion-row *ngIf="connectionInfo?.effectiveType" align-items-center justify-content-center text-wrap>
+        <ion-item>
+            <ion-label color="primary" text-center>Effective Network Type: {{ connectionInfo.effectiveType }}</ion-label>
+        </ion-item>
+    </ion-row>
+    <ion-row *ngIf="connectionInfo?.downlinkMax" align-items-center justify-content-center text-wrap>
+        <ion-item>
+            <ion-label color="primary" text-center>Downlink Max: {{ connectionInfo.downlinkMax }}</ion-label>
+        </ion-item>
+    </ion-row>
+    <ion-row align-items-center justify-content-center>
+        <button ion-button (click)="vibrate()"> Vibrate </button>
+    </ion-row>
+</ion-content>

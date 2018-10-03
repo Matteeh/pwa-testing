@@ -7,11 +7,12 @@ import { HomePage } from '../pages/home/home';
 import { CameraPage } from '../pages/camera/camera';
 import { QrReaderPage } from '../pages/qr-reader/qr-reader';
 import { GeoLocationPage } from '../pages/geo-location/geo-location';
-import { CapacitorPage } from '../pages/capacitor/capacitor';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ToastProvider } from '../providers/toast/toast';
+import { DeviceFeaturesPage } from '../pages/device-features/device-features';
+import { CameraAdvancedPage } from '../pages/camera-advanced/camera-advanced';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ToastProvider } from '../providers/toast/toast';
     CameraPage,
     QrReaderPage,
     GeoLocationPage,
-    CapacitorPage
+    DeviceFeaturesPage,
+    CameraAdvancedPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { ToastProvider } from '../providers/toast/toast';
     CameraPage,
     QrReaderPage,
     GeoLocationPage,
-    CapacitorPage
+    DeviceFeaturesPage,
+    CameraAdvancedPage
   ],
   providers: [
     StatusBar,

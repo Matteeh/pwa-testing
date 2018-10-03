@@ -7,7 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { CameraPage } from '../pages/camera/camera';
 import { QrReaderPage } from '../pages/qr-reader/qr-reader';
 import { GeoLocationPage } from '../pages/geo-location/geo-location';
-import { CapacitorPage } from '../pages/capacitor/capacitor';
+import { DeviceFeaturesPage } from '../pages/device-features/device-features';
+import { CameraAdvancedPage } from '../pages/camera-advanced/camera-advanced';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,9 +27,10 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Camera', component: CameraPage },
-      { title: 'Qr Code Reader', component: QrReaderPage },
+      { title: 'Camera advanced', component: CameraAdvancedPage },
+      { title: 'Qr Code Reader', component: QrReaderPage }, 
       { title: 'Geo Location', component: GeoLocationPage},
-      { title: 'Capacitor', component: CapacitorPage }
+      { title: 'Device Features', component: DeviceFeaturesPage }
     ];
 
   }
