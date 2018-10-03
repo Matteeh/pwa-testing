@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>QR code reader</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding align-items-end> 
+        <video #videoInput width="100%" height="100%"></video>
+</ion-content>
+
+<ion-footer *ngIf="message">
+        <ion-toolbar>
+            <ion-title>QR code: </ion-title>
+            <p ion-text text-wrap text-center>{{ message }}</p>
+            <button ion-button block *ngIf="message" (click)="createCodeReader()">Scan new code</button>
+        </ion-toolbar>
+</ion-footer>

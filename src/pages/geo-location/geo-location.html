@@ -1,0 +1,20 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>geo-location</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-row align-items-center justify-content-center>
+        <button ion-button (click)="onGetLocation()"> Get location </button>
+    </ion-row>
+    <ion-row align-items-center justify-content-center>
+        <img #map [src]="img" />
+    </ion-row>
+</ion-content>

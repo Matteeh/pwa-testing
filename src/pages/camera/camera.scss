@@ -1,0 +1,22 @@
+page-camera {
+
+    input {
+        width: 0.1px;
+	    height: 0.1px;
+	    opacity: 0;
+	    overflow: hidden;
+	    position: absolute;
+	    z-index: -1;
+    }
+    .camera-input + label {
+        font-size: 2.5em;
+        font-weight: 700;
+        color: black;
+        display: inline-block;
+    }
+    
+    .camera-input:focus + label,
+    .camera-input + label:hover {
+        color: indianred;
+    }
+}

@@ -4,16 +4,21 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { CameraPage } from '../pages/camera/camera';
+import { QrReaderPage } from '../pages/qr-reader/qr-reader';
+import { GeoLocationPage } from '../pages/geo-location/geo-location';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ToastProvider } from '../providers/toast/toast';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    CameraPage,
+    QrReaderPage,
+    GeoLocationPage
   ],
   imports: [
     BrowserModule,
@@ -23,12 +28,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    CameraPage,
+    QrReaderPage,
+    GeoLocationPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ToastProvider
   ]
 })
 export class AppModule {}

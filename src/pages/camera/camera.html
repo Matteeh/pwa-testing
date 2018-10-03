@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Camera</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-row align-items-center justify-content-center>
+            <input #inputcamera class="camera-input" id="camera-input" type="file" accept="image/*" capture="camera" />
+            <label for="camera-input"><ion-icon name="camera"></ion-icon></label>
+    </ion-row>
+    <ion-row *ngIf="img" justify-content-center align-items-center>
+        <img [src]="img" />
+    </ion-row>
+</ion-content>
