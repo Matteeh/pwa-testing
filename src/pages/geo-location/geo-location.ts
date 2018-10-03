@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { ToastProvider } from '../../providers/toast/toast';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { GOOGLE_API_KEY } from '../../../api-keys';
 
 
 @Component({
@@ -76,9 +77,9 @@ export class GeoLocationPage {
      */
     private showInMap({latitude, longitude}) {
         const latlon = latitude + ',' + longitude;
-        const key = 'AIzaSyCPHTAtekH7BA8i_ui-oI5GXdT8H5XMP2k';
+        
         const img_url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
-                         latlon +'&zoom=14&size=400x300&sensor=false&key=' + key;
+                         latlon +'&zoom=14&size=400x300&sensor=false&key=' + GOOGLE_API_KEY;
         this.mapRef.nativeElement.src = img_url;
     }
 
