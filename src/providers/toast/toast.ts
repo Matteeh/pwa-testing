@@ -12,8 +12,8 @@ export class ToastProvider {
      * @param message a string message that will be displayed in the toast
      * @param options a ToastOptions object, optional param.
      */
-    createToast(message, options?: ToastOptions | string) {
-        const _options = typeof options === 'object' ? options :
+    createToast(message, options?: ToastOptions) {
+        const _options: ToastOptions = options || 
             {
                 duration: 3000,
                 position: 'top',

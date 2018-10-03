@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators';
+import { ToastProvider } from '../../providers/toast/toast';
 
 
 
@@ -18,7 +19,7 @@ export class CameraPage {
     private reader = new FileReader();
     private unsubscribe: Subject<void> = new Subject();
 
-    constructor() {
+    constructor(private toast: ToastProvider) {
     }
 
     ionViewWillEnter() {

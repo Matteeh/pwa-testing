@@ -21,6 +21,9 @@ export class QrReaderPage {
         this.createCodeReader();
     }
 
+    /**
+     * Creates a BrowserQrCodeReader object and starts decoding video input untill a QR code has been decoded.
+     */
     createCodeReader() {
         this.message = null;
         const codeReader = new BrowserQRCodeReader();

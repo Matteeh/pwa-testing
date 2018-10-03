@@ -17,6 +17,7 @@ export class GeoLocationPage {
     }
 
     ionViewDidEnter() {
+        // Start listening to location on view did enter
         this.location
         .subscribe(res => {
             console.log(res);
@@ -26,19 +27,29 @@ export class GeoLocationPage {
         });
     }
 
+
+    /**
+     * Get location button clicked
+     */
     onGetLocation() {
         this.getLocation();
     }
 
-    private getLocation(): void{
+    /**
+     * Gets current users location
+     */
+    private getLocation(): void {
+        // Check if browser supports geolocation api
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition( position => {
+                // If successful set location
                 const location = {
                     longitude: position.coords.longitude,
                     latitude: position.coords.latitude
                 };
                 this.location.next(location);
             }, error => {
+                // If error set error message
                 switch(error.code) {
                     case error.PERMISSION_DENIED:
                         this.location.next('User denied the request for Geolocation.');
@@ -54,10 +65,15 @@ export class GeoLocationPage {
                 }
             });
         } else {
+            // Browser does not support Geo location
             this.location.next('Geo Location not supported by browser');
         }
     }
 
+    /**
+     * Show location on a map using a static image
+     * @param obj { latitude, longitude } values req by Gmaps api
+     */
     private showInMap({latitude, longitude}) {
         const latlon = latitude + ',' + longitude;
         const key = 'AIzaSyCPHTAtekH7BA8i_ui-oI5GXdT8H5XMP2k';
